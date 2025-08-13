@@ -4,7 +4,7 @@ Software engineering is as much about communication as it is about computation. 
 
 ## Naming Things
 
-![Naming Things](../../tmp/pytest-of-ubuntu/pytest-0/test_pipeline_dry_run0/assets/img-dd148fa6a8a04f8b.png) <!-- ai-image anchor:a3 -->
+![Naming Things](../../tmp/pytest-of-ubuntu/pytest-1/test_pipeline_dry_run0/assets/img-dd148fa6a8a04f8b.png) <!-- ai-image anchor:a3 -->
 
 People often say that naming things is one of the hardest problems in computer science. Good names are compressions of meaning. They help readers load context quickly and reduce cognitive overhead.
 
@@ -12,7 +12,7 @@ When you choose a name, prefer clarity over cleverness. Avoid abbreviations that
 
 ## Functions and Abstractions
 
-![Functions and Abstractions](../../tmp/pytest-of-ubuntu/pytest-0/test_pipeline_dry_run0/assets/img-c1aa9e7ee59e3b2c.png) <!-- ai-image anchor:a6 -->
+![Functions and Abstractions](../../tmp/pytest-of-ubuntu/pytest-1/test_pipeline_dry_run0/assets/img-c1aa9e7ee59e3b2c.png) <!-- ai-image anchor:a6 -->
 
 Functions are the verbs of your codebase. They should do one thing and do it well. When functions grow too large, split them into smaller units with focused responsibilities.
 

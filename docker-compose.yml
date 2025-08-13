@@ -1,0 +1,25 @@
+services:
+  agent:
+    build: .
+    image: blog-image-agent:latest
+    environment:
+      - DRY_RUN=${DRY_RUN:-1}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - TEXT_MODEL=${TEXT_MODEL:-gpt-4o-mini}
+      - IMAGE_MODEL=${IMAGE_MODEL:-gpt-image-1}
+      - MAX_IMAGES=${MAX_IMAGES:-3}
+      - DEFAULT_WIDTH=${DEFAULT_WIDTH:-1280}
+      - DEFAULT_HEIGHT=${DEFAULT_HEIGHT:-720}
+      - COMPRESS_WEBP=${COMPRESS_WEBP:-true}
+      - WEBP_QUALITY=${WEBP_QUALITY:-82}
+      - OUTPUT_SUFFIX=${OUTPUT_SUFFIX:-.illustrated.md}
+    # Mount your blogs into /data and point --input there
+    volumes:
+      - ./samples:/data:rw
+    entrypoint: ["python", "-m", "blog_image_agent.cli"]
+    command: [
+      "process",
+      "--input", "/data/sample.md",
+      "--assets-dir", "/data/assets",
+      "--max-images", "2"
+    ]

@@ -81,3 +81,36 @@ Dry-run tests create placeholder images locally so there are no external depende
 ## Notes
 - The agent is conservative: it avoids inserting images back-to-back and near the very top unless a hero image is requested.
 - Works best for expository articles with clear section structure.
+
+## Docker
+
+Build the image:
+```bash
+docker build -t blog-image-agent .
+```
+
+Dry-run example (no external API calls):
+```bash
+docker run --rm \
+  -e DRY_RUN=1 \
+  -v "$PWD/samples:/data" \
+  blog-image-agent \
+  process --input /data/sample.md --assets-dir /data/assets --max-images 2
+```
+
+Use OpenAI for real images:
+```bash
+docker run --rm \
+  -e OPENAI_API_KEY=sk-... \
+  -e DRY_RUN=0 \
+  -v "$PWD/samples:/data" \
+  blog-image-agent \
+  process --input /data/sample.md --assets-dir /data/assets --max-images 3 \
+  --image-model gpt-image-1 --text-model gpt-4o-mini
+```
+
+Docker Compose:
+```bash
+docker compose up --build
+```
+This mounts `./samples` to `/data` inside the container and writes output assets there.

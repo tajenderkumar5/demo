@@ -1,0 +1,27 @@
+# VCS
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+.pytest_cache
+.venv
+venv
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea
+.vscode
+
+# Node
+node_modules
+
+# Tests (not needed in runtime image)
+tests
+.coverage
+htmlcov
